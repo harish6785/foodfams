@@ -1056,3 +1056,72 @@ Processing by Spree::StoreController#cart_link as */*
   Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_link_to_cart.html.erb (153.3ms)
   Couldn't find template for digesting: store/cart_link
 Completed 200 OK in 518ms (Views: 365.1ms | ActiveRecord: 44.8ms)
+  [1m[36mSpree::AuthenticationMethod Load (0.7ms)[0m  [1mSELECT "spree_authentication_methods".* FROM "spree_authentication_methods" WHERE "spree_authentication_methods"."environment" = $1[0m  [["environment", "development"]]
+[Spree Social] Loading Facebook as authentication source
+  [1m[35mSpree::AuthenticationMethod Load (0.4ms)[0m  SELECT "spree_authentication_methods".* FROM "spree_authentication_methods" WHERE "spree_authentication_methods"."environment" = $1  [["environment", "development"]]
+[Spree Social] Loading Twitter as authentication source
+  [1m[36mSpree::AuthenticationMethod Load (0.3ms)[0m  [1mSELECT "spree_authentication_methods".* FROM "spree_authentication_methods" WHERE "spree_authentication_methods"."environment" = $1[0m  [["environment", "development"]]
+  [1m[35mSpree::AuthenticationMethod Load (0.4ms)[0m  SELECT "spree_authentication_methods".* FROM "spree_authentication_methods" WHERE "spree_authentication_methods"."environment" = $1  [["environment", "development"]]
+[Spree Social] Loading Google_oauth2 as authentication source
+  [1m[36mSpree::AuthenticationMethod Load (0.5ms)[0m  [1mSELECT "spree_authentication_methods".* FROM "spree_authentication_methods" WHERE "spree_authentication_methods"."environment" = $1[0m  [["environment", "development"]]
+  [1m[35mSpree::AuthenticationMethod Load (0.4ms)[0m  SELECT "spree_authentication_methods".* FROM "spree_authentication_methods" WHERE "spree_authentication_methods"."environment" = $1  [["environment", "development"]]
+[Spree Social] Loading Linkedin as authentication source
+  [1m[36mSpree::Preference Load (0.8ms)[0m  [1mSELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1  ORDER BY "spree_preferences"."id" ASC LIMIT 1[0m  [["key", "spree/app_configuration/mails_from"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSpree::Preference Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "spree_preferences" WHERE ("spree_preferences"."key" = 'spree/app_configuration/mails_from' AND "spree_preferences"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpree::Store Load (1.0ms)[0m  [1mSELECT  "spree_stores".* FROM "spree_stores" WHERE "spree_stores"."default" = 't'  ORDER BY "spree_stores"."id" ASC LIMIT 1[0m
+  [1m[35mSpree::Preference Load (0.4ms)[0m  SELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1  [["key", "spree/auth_configuration/confirmable"]]
+  [1m[36mSpree::Preference Load (0.5ms)[0m  [1mSELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1[0m  [["key", "spree/social_configuration/path_prefix"]]
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-06 12:13:56 +0530
+  [1m[35mActiveRecord::SchemaMigration Load (0.9ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by Spree::HomeController#index as HTML
+  [1m[36mSpree::Preference Load (0.6ms)[0m  [1mSELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1[0m  [["key", "spree/frontend_configuration/locale"]]
+  [1m[35mSpree::Preference Load (0.7ms)[0m  SELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1  [["key", "spree/app_configuration/currency"]]
+  [1m[36mSpree::Preference Load (0.6ms)[0m  [1mSELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1[0m  [["key", "spree/app_configuration/products_per_page"]]
+  [1m[35mSpree::Preference Load (0.5ms)[0m  SELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1  [["key", "spree/app_configuration/show_products_without_price"]]
+  [1m[36mSpree::Preference Load (0.4ms)[0m  [1mSELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1[0m  [["key", "spree/app_configuration/layout"]]
+  [1m[35mSpree::Preference Load (0.4ms)[0m  SELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1  [["key", "spree/app_configuration/max_level_in_taxons_menu"]]
+  [1m[36mSpree::Taxonomy Load (1.3ms)[0m  [1mSELECT "spree_taxonomies".* FROM "spree_taxonomies"  ORDER BY spree_taxonomies.position, spree_taxonomies.created_at[0m
+  [1m[35mSpree::Taxon Load (1.3ms)[0m  SELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL AND "spree_taxons"."taxonomy_id" IN (1, 2)
+  [1m[36mSpree::Taxon Load (0.9ms)[0m  [1mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IN (2, 1)  ORDER BY "lft"[0m
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_taxonomies.html.erb (105.7ms)
+  [1m[35m (3.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = 't' AND "spree_variants"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "spree_variants"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND ("spree_products".deleted_at IS NULL or "spree_products".deleted_at >= '2015-04-06 06:43:57.282828') AND ("spree_products".available_on <= '2015-04-06 06:43:57.283512') AND (spree_prices.amount IS NOT NULL) AND "spree_prices"."currency" = 'USD' LIMIT 12 OFFSET 0) subquery_for_count
+  [1m[36m (1.9ms)[0m  [1mSELECT  MAX("spree_products"."updated_at") FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = 't' AND "spree_variants"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "spree_variants"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND ("spree_products".deleted_at IS NULL or "spree_products".deleted_at >= '2015-04-06 06:43:57.282828') AND ("spree_products".available_on <= '2015-04-06 06:43:57.283512') AND (spree_prices.amount IS NOT NULL) AND "spree_prices"."currency" = 'USD' LIMIT 12 OFFSET 0[0m
+  [1m[35m (2.0ms)[0m  SELECT COUNT(*) FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = 't' AND "spree_variants"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "spree_variants"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND ("spree_products".deleted_at IS NULL or "spree_products".deleted_at >= '2015-04-06 06:43:57.282828') AND ("spree_products".available_on <= '2015-04-06 06:43:57.283512') AND (spree_prices.amount IS NOT NULL) AND "spree_prices"."currency" = 'USD'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = 't' AND "spree_variants"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "spree_variants"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND ("spree_products".deleted_at IS NULL or "spree_products".deleted_at >= '2015-04-06 06:43:57.282828') AND ("spree_products".available_on <= '2015-04-06 06:43:57.283512') AND (spree_prices.amount IS NOT NULL) AND "spree_prices"."currency" = 'USD' LIMIT 12 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = 't' AND "spree_variants"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "spree_variants"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND ("spree_products".deleted_at IS NULL or "spree_products".deleted_at >= '2015-04-06 06:43:57.282828') AND ("spree_products".available_on <= '2015-04-06 06:43:57.283512') AND (spree_prices.amount IS NOT NULL) AND "spree_prices"."currency" = 'USD' LIMIT 12 OFFSET 0) subquery_for_count
+  [1m[36mSpree::Product Load (2.2ms)[0m  [1mSELECT  "spree_products".* FROM "spree_products" INNER JOIN "spree_variants" ON "spree_variants"."product_id" = "spree_products"."id" AND "spree_variants"."is_master" = 't' AND "spree_variants"."deleted_at" IS NULL INNER JOIN "spree_prices" ON "spree_prices"."variant_id" = "spree_variants"."id" AND "spree_prices"."deleted_at" IS NULL WHERE "spree_products"."deleted_at" IS NULL AND ("spree_products".deleted_at IS NULL or "spree_products".deleted_at >= '2015-04-06 06:43:57.282828') AND ("spree_products".available_on <= '2015-04-06 06:43:57.283512') AND (spree_prices.amount IS NOT NULL) AND "spree_prices"."currency" = 'USD' LIMIT 12 OFFSET 0[0m
+  [1m[35mSpree::Variant Load (1.1ms)[0m  SELECT "spree_variants".* FROM "spree_variants" WHERE "spree_variants"."deleted_at" IS NULL AND "spree_variants"."is_master" = 't' AND "spree_variants"."product_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+  [1m[36mSpree::Price Load (0.8ms)[0m  [1mSELECT "spree_prices".* FROM "spree_prices" WHERE "spree_prices"."deleted_at" IS NULL AND "spree_prices"."variant_id" IN (10, 9, 8, 1, 2, 3, 4, 5, 7, 6, 12, 11)[0m
+  [1m[35mSpree::Image Load (1.4ms)[0m  SELECT "spree_assets".* FROM "spree_assets" WHERE "spree_assets"."type" IN ('Spree::Image') AND "spree_assets"."viewable_type" = 'Spree::Variant' AND "spree_assets"."viewable_id" IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)  ORDER BY "spree_assets"."position" ASC
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_products.html.erb (277.8ms)
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/home/index.html.erb within spree/layouts/spree_application (474.2ms)
+  [1m[36mSpree::Store Load (0.6ms)[0m  [1mSELECT  "spree_stores".* FROM "spree_stores" WHERE (url like '%localhost%')  ORDER BY "spree_stores"."id" ASC LIMIT 1[0m
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_head.html.erb (3841.2ms)
+  [1m[35mSpree::Tracker Load (0.8ms)[0m  SELECT  "spree_trackers".* FROM "spree_trackers" WHERE "spree_trackers"."active" = 't'  ORDER BY "spree_trackers"."id" ASC LIMIT 1
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_google_analytics.js.erb (8.3ms)
+  [1m[36mSpree::Preference Load (0.6ms)[0m  [1mSELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1[0m  [["key", "spree/app_configuration/logo"]]
+[1;32mDeface:[0m 1 overrides found for 'spree/shared/_nav_bar'
+[1;32mDeface:[0m 'auth_shared_login_bar' matched 1 times with 'li#search-bar'
+[1;32mDeface: [ERROR][0m The original source for 'auth_shared_login_bar' has changed, this override should be reviewed to ensure it's still valid.
+  [1m[35m (0.8ms)[0m  SELECT MAX("spree_taxons"."updated_at") FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL
+  [1m[36mSpree::Taxon Load (0.7ms)[0m  [1mSELECT "spree_taxons".* FROM "spree_taxons" WHERE "spree_taxons"."parent_id" IS NULL  ORDER BY "spree_taxons"."lft"[0m
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_search.html.erb (5.8ms)
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_nav_bar.html.erb (26.6ms)
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_main_nav_bar.html.erb (1.0ms)
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_header.html.erb (103.6ms)
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 4711ms (Views: 4530.7ms | ActiveRecord: 39.5ms)
+
+
+Started GET "/cart_link" for 127.0.0.1 at 2015-04-06 12:14:02 +0530
+Processing by Spree::StoreController#cart_link as */*
+  [1m[35mSpree::Preference Load (0.3ms)[0m  SELECT  "spree_preferences".* FROM "spree_preferences" WHERE "spree_preferences"."key" = $1 LIMIT 1  [["key", "spree/frontend_configuration/locale"]]
+  [1m[36mSpree::Store Load (0.6ms)[0m  [1mSELECT  "spree_stores".* FROM "spree_stores" WHERE (url like '%localhost%')  ORDER BY "spree_stores"."id" ASC LIMIT 1[0m
+  [1m[35mSpree::Order Load (0.8ms)[0m  SELECT  "spree_orders".* FROM "spree_orders" WHERE "spree_orders"."completed_at" IS NULL AND "spree_orders"."currency" = $1 AND "spree_orders"."guest_token" = $2 AND "spree_orders"."store_id" = $3 AND "spree_orders"."user_id" IS NULL LIMIT 1  [["currency", "USD"], ["guest_token", "Kh_XzoeUah9-ASib9akyag"], ["store_id", 1]]
+  Rendered /home/gaurav/.rvm/gems/ruby-2.2.0/gems/spree_frontend-3.0.0/app/views/spree/shared/_link_to_cart.html.erb (89.0ms)
+  Couldn't find template for digesting: store/cart_link
+Completed 200 OK in 348ms (Views: 314.2ms | ActiveRecord: 4.2ms)
