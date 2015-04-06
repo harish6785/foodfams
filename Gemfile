@@ -78,7 +78,7 @@ group :production, :staging do
   gem 'newrelic_rpm'
 #  gem 'thin'
   gem 'unicorn'
-  gem 'exception_notification'
-  gem 'exception_notification-rake', '~> 0.0.6'
+  #gem 'exception_notification'
+  #gem 'exception_notification-rake', '~> 0.0.6'
   # gem 'net-sftp'
 end
