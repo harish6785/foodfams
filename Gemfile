@@ -1,12 +1,9 @@
 source 'https://rubygems.org'
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'pg'
-gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -47,9 +44,39 @@ group :development, :test do
 end
 
 gem 'omniauth-linkedin'
-gem 'mailcatcher'
 gem 'spree', '3.0.0'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-0-stable'
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: '3-0-stable'
+
+
+group :development do
+  # To use debugger
+  # gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'sprite-factory'
+  gem 'quiet_assets'
+  gem 'mailcatcher'
+  gem "letter_opener"
+end
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', '0.8.2', :require => false
+end
+
+group :production, :staging do
+  #gem 'spree_editor', :git => 'git://github.com/spree/spree_editor.git'
+  gem 'tinymce-rails', '>= 3.4.7.0.1'
+  gem 'rails_12factor'
+
+  # gem 'dalli' # for memcache
+  # gem 'memcachier'
+
+  gem 'newrelic_rpm'
+#  gem 'thin'
+  gem 'unicorn'
+  gem 'exception_notification'
+  gem 'exception_notification-rake', '~> 0.0.6'
+  # gem 'net-sftp'
+end
